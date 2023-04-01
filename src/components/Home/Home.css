@@ -1,9 +1,10 @@
 .home-container {
     display: grid;
     grid-template-columns: 3fr 1fr;
+    margin: 30px;
 }
 
-.tshirt-contanier {
+.tshirt-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;

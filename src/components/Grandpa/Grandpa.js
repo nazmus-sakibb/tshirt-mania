@@ -1,24 +1,29 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 import './Grandpa.css';
 import Father from '../Father/Father';
 import Uncle from '../Uncle/Uncle';
 import Aunty from '../Aunty/Aunty';
 
-const HouseContext = createContext('10 ta house');
+export const HouseContext = createContext('10 ta house');
+export const MoneyContext = createContext(345);
 
 const Grandpa = () => {
-    const house = 7;
-    return (
-        <HouseContext.Provider value='Dadu house'>
-            <div className='grandpa'>
-                <h2>Grandpa</h2>
+    const [house, setHouse] = useState(1);
+    const [money, setMoney] = useState(345);
 
-                <section className='flex'>
-                    <Father house={house} />
-                    <Uncle house={house} />
-                    <Aunty house={house} />
-                </section>
-            </div>
+    return (
+        <HouseContext.Provider value={[house, setHouse]}>
+            <MoneyContext.Provider value={[money, setMoney]}>
+                <div className='grandpa'>
+                    <h2>Grandpa</h2>
+
+                    <section className='flex'>
+                        <Father house={house} />
+                        <Uncle house={house} />
+                        <Aunty house={house} />
+                    </section>
+                </div>
+            </MoneyContext.Provider>
         </HouseContext.Provider>
     );
 };

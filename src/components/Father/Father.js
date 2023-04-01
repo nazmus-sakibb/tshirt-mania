@@ -9,7 +9,7 @@ const Father = ({ house }) => {
             <h2>Father</h2>
             <p><small>House: {house}</small></p>
             <section className='flex'>
-                <MySelf house={house} />
+                <MySelf />
                 <Brother house={house} />
                 <Sister house={house} />
             </section>
